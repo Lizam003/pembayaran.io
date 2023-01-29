@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width-device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <!-- My CSS -->
+    <link rel="stylesheet" herf="css/style.css" type="text/css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-danger shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="img/568de65a-2aee-48eb-bac6-fd3eed1ddbab.jpg" alt="" width="200" class="rounded-circle img-thumbnail" />
+        </a>
+      </div>
+    </nav>
+    <!-- Akhir Navbar -->
+    <!-- Jumbotron -->
+    <section class="jumbotron text-center bg-secondary">
+      <!-- Pembayaran -->
+      <section id="pembayaran">
+        <div class="container">
+          <div class="row mb-3">
+            <div clas="col">
+              <h2>Pilihan Pembayaran</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <img src="img/ovo tr.png" class="card-img-top" alt="pembayaran1" />
+                <div class="card-body">
+                  <p class="card-text">
+                    <a href="https://www.ovo.id">OVO 082299122830</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <img src="img/G 512.jpg" class="card-img-top" alt="pembayaran2" />
+                <div class="card-body">
+                  <p class="card-text">
+                    <a href="https://GOPAY.co.id">GOPAY 082299122830</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <img src="img/512x512bb.jpg" class="card-img-top" alt="pembayaran3" />
+                <div class="card-body">
+                  <p class="card-text">
+                    <a href="https://www.bni.co.id">BNI 0608320012</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Akhir Pembayaran -->
+    </section>
+    <!-- Akhir Jumbotron -->
+    <div class="row justify-content-center">
+      <div class="col-md-8 mb-3">
+        <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+          <strong>Terimakasih</strong> Anda telah berpartisipasi
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <form name="pembayaran-contact-form">
+          <div class="mb-3">
+            <label for="name" class="form-label">Nama lengkap</label>
+            <input type="text" class="form-control" id="name" aria-describedby="name" name="nama" />
+          </div>
+          <div class="mb-3">
+            <label for="Nominal" class="form-label">Nominal</label>
+            <input type="number" class="form-control" id="Nominal" aria-describedby="Nominal" name="nominal" />
+          </div>
+
+          <div class="mb-3">
+            <input type="file" class="form-control" aria-label="upload" required name="file" />
+            <div class="invalid-feedback">Upload bukti pembayaran</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="pesan" class="form-label">Pesan</label>
+            <textarea class="form-control" id="pesan" name="pesan" rows="3" placeholder="Tulis Pesan"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-info text-center btn-kirim">Kirim</button>
+          <button class="btn btn-info btn-loading d-none" type="button" disabled>
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Loading...
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+      -->
+    <form name="pembayaran-contact-form">
+      <input name="email" type="email" placeholder="Email" required />
+      <button type="submit">Send</button>
+    </form>
+
+    <script>
+      const scriptURL = "https://script.google.com/macros/s/AKfycbxqTBzf_SF17-tAjwdgfgi2jNrcCq5OHDBmgoKLM7fQI0dg7DsqyJWdadZ78y6H1d1Wqw/exec";
+      const form = document.forms["pembayaran-contact-form"];
+      const btnKirim = document.querySelector(".btn-kirim");
+      const btnLoading = document.querySelector(".btn-loading");
+      const myAlert = document.querySelector(".my-alert");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        //ketika tombol submit diklik
+        //tampilkan tombol loading, hilangkan tombol kirim
+        btnLoading.classList.toggle("d-none");
+        btnKirim.classList.toggle("d-none");
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            //tampilkan tombol kirim, hilangkan tombol loading
+            btnLoading.classList.toggle("d-none");
+            btnKirim.classList.toggle("d-none");
+            //tampilkan alert
+            myAlert.classList.toggle("d-none");
+            //reset form
+            form.reset();
+
+            console.log("Success!", response);
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+  </body>
+</html>
